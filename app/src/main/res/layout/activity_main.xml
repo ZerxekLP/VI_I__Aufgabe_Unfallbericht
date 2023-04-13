@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onButtonClick"
-        android:text="Button" />
+        android:text="Hinzufuegen" />
 
     <TextView
         android:id="@+id/textView"
@@ -21,4 +21,8 @@
         android:text="vorhande Faelle"
         android:textColor="@color/black"
         android:textSize="24sp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

@@ -10,10 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fcedfca-b683-4067-95c2-c9c1b8e96a9d" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vi_i__aufgabe_unfallbericht/Incident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/vi_i__aufgabe_unfallbericht/AddingIncident.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/vi_i__aufgabe_unfallbericht/AddingIncident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_adding_incident.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_adding_incident.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681306168252</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="init">
+      <created>1681366281103</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681366281103</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
