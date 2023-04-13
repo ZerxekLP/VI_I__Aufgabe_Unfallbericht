@@ -8,6 +8,7 @@ import android.view.View;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
@@ -20,9 +21,12 @@ public class AddingIncident extends AppCompatActivity {
         setContentView(R.layout.activity_adding_incident);
     }
 
-    public void onFinishedClick(View view) throws FileNotFoundException {
+    public void onFinishedClick(View view) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("count.txt")));
-        br.read()
-        ObjectOutputStream oos = new ObjectOutputStream(openFileOutput())
+        int currantPositon = Integer.parseInt(br.readLine());
+        System.out.println(currantPositon);
+
+        //Incident currantIncident = new Incident(currantPositon)
+        //ObjectOutputStream oos = new ObjectOutputStream(openFileOutput())
     }
 }
