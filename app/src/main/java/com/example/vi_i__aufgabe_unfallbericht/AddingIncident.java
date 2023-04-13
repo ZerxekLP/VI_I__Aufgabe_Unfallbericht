@@ -2,6 +2,7 @@ package com.example.vi_i__aufgabe_unfallbericht;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -28,18 +29,21 @@ public class AddingIncident extends AppCompatActivity {
     public void onFinishedClick(View view) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("count.txt")));
         int currantPositon = Integer.parseInt(br.readLine());
+
         System.out.println(currantPositon);
         br.close();
+        currantPositon ++;
 
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(openFileOutput("count.txt", MODE_PRIVATE)));
-        bw.write(currantPositon);//loescht altes nicht heraus
+        bw.write(currantPositon + "");
         bw.close();
-
-
 
         TextView dayOfIncident = findViewById(R.id.dayOfInsident);
         Incident currantIncident = new Incident(currantPositon, String.valueOf(dayOfIncident.getText()));
 
         ObjectOutputStream oos = new ObjectOutputStream(openFileOutput(currantPositon + "", MODE_PRIVATE));
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
