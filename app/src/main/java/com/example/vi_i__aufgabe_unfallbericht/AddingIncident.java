@@ -31,12 +31,11 @@ public class AddingIncident extends AppCompatActivity {
         System.out.println(currantPositon);
         br.close();
 
-        /*
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(openFileOutput("count.txt", MODE_PRIVATE)));
-        bw.write("2");//loescht altes nicht heraus
+        bw.write(currantPositon);//loescht altes nicht heraus
         bw.close();
 
-         */
+
 
         TextView dayOfIncident = findViewById(R.id.dayOfInsident);
         Incident currantIncident = new Incident(currantPositon, String.valueOf(dayOfIncident.getText()));
