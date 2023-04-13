@@ -38,7 +38,7 @@ public class AddingIncident extends AppCompatActivity {
 
          */
 
-        TextView dayOfIncident = findViewById(R.id.dayOfIncident);
+        TextView dayOfIncident = findViewById(R.id.dayOfInsident);
         Incident currantIncident = new Incident(currantPositon, String.valueOf(dayOfIncident.getText()));
 
         ObjectOutputStream oos = new ObjectOutputStream(openFileOutput(currantPositon + "", MODE_PRIVATE));
