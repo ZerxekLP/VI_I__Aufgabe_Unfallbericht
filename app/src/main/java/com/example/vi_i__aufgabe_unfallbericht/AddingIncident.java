@@ -30,6 +30,13 @@ public class AddingIncident extends AppCompatActivity {
         BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("count.txt")));
         int currantPositon = Integer.parseInt(br.readLine());
 
+        TextView dayOfIncident = findViewById(R.id.dayOfInsident);
+        Incident currantIncident = new Incident(currantPositon, String.valueOf(dayOfIncident.getText()));
+
+        ObjectOutputStream oos = new ObjectOutputStream(openFileOutput(currantPositon + "", MODE_PRIVATE));
+        oos.writeObject(currantIncident);
+        oos.close();
+
         System.out.println(currantPositon);
         br.close();
         currantPositon ++;
@@ -38,10 +45,8 @@ public class AddingIncident extends AppCompatActivity {
         bw.write(currantPositon + "");
         bw.close();
 
-        TextView dayOfIncident = findViewById(R.id.dayOfInsident);
-        Incident currantIncident = new Incident(currantPositon, String.valueOf(dayOfIncident.getText()));
 
-        ObjectOutputStream oos = new ObjectOutputStream(openFileOutput(currantPositon + "", MODE_PRIVATE));
+
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

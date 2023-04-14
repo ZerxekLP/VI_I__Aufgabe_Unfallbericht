@@ -1,8 +1,9 @@
 package com.example.vi_i__aufgabe_unfallbericht;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Incident {
+public class Incident implements Serializable {
     int id;
     String dayOfIncident;
     String time;
