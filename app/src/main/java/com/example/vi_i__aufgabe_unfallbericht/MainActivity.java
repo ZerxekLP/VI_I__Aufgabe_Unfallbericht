@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.io.BufferedReader;
@@ -30,6 +31,18 @@ public class MainActivity extends AppCompatActivity {
         ap = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
         lv = findViewById(R.id.listView);
         lv.setAdapter(ap);
+
+        Button addbuttonmain = (Button) findViewById(R.id.addbuttonmain);
+        addbuttonmain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               addbuttonmainclicked(view);
+            }
+        });
+
+
+
+
     }
 
 
@@ -82,6 +95,10 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonClick(View view) {
         Intent intent = new Intent(this, AddingIncident.class);
         startActivity(intent);
+    }
+
+    public void  addbuttonmainclicked(final View source){
+
     }
 
 }

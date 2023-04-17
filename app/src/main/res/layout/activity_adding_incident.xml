@@ -127,7 +127,7 @@
                 android:textSize="24sp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/addbutton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hinzufuegen" />
@@ -137,7 +137,7 @@
                 android:layout_height="42dp" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/finishedbutton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onFinishedClick"
