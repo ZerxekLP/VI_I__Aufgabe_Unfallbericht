@@ -40,7 +40,7 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -55,7 +55,7 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/place"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -70,7 +70,7 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName4"
+                android:id="@+id/postalCcode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -85,7 +85,7 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName5"
+                android:id="@+id/street"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -100,23 +100,23 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName6"
+                android:id="@+id/nr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/injured"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Verletzte" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/otherDamage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Anderer Sachschaden als an den Fahrzeugen A und B" />
 
             <TextView
                 android:id="@+id/textView8"

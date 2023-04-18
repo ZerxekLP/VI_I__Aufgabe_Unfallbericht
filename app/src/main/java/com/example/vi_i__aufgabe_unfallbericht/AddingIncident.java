@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -45,7 +48,22 @@ public class AddingIncident extends AppCompatActivity {
         int currantPositon = Integer.parseInt(br.readLine());
 
         TextView dayOfIncident = findViewById(R.id.dayOfInsident);
-        Incident currantIncident = new Incident(currantPositon, String.valueOf(dayOfIncident.getText()));
+        TextView time = findViewById(R.id.time);
+        TextView place = findViewById(R.id.place);
+        TextView postalCode = findViewById(R.id.postalCcode);
+        TextView street = findViewById(R.id.street);
+        TextView nr = findViewById(R.id.nr);
+        RadioButton injuredRB = findViewById(R.id.injured);
+        RadioButton otherDamageRB = findViewById(R.id.otherDamage);
+
+        System.out.println(injuredRB.getText());
+
+
+        Incident currantIncident = new Incident(currantPositon, String.valueOf(dayOfIncident.getText()), String.valueOf(time.getText()),
+                new Place(String.valueOf(place.getText()), Integer.parseInt(String.valueOf(postalCode.getText())),
+                        String.valueOf(street.getText()), String.valueOf(nr.getText())));
+
+
 
         ObjectOutputStream oos = new ObjectOutputStream(openFileOutput(currantPositon + "", MODE_PRIVATE));
         oos.writeObject(currantIncident);
@@ -58,6 +76,8 @@ public class AddingIncident extends AppCompatActivity {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(openFileOutput("count.txt", MODE_PRIVATE)));
         bw.write(currantPositon + "");
         bw.close();
+
+
 
 
 

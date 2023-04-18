@@ -7,16 +7,16 @@ public class Incident implements Serializable {
     int id;
     String dayOfIncident;
     String time;
-    String place;
-    int postelCcode;
-    String street;
-    String nr;
+    Place place;
+
     boolean injured;
     boolean otherDamage;
 
-    public Incident(int id, String dayOfIncident) {
+    public Incident(int id, String dayOfIncident, String time, Place place) {
         this.id = id;
         this.dayOfIncident = dayOfIncident;
+        this.time = time;
+        this.place = place;
 
     }
 
