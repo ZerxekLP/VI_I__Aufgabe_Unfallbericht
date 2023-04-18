@@ -35,17 +35,6 @@ public class AddingIncident extends AppCompatActivity {
             }
         });
 
-        Button finishedbutton = (Button) findViewById(R.id.finishedbutton);
-        finishedbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    onFinishedClick(view);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
 
 
 

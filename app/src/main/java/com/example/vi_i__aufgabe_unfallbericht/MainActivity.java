@@ -32,17 +32,6 @@ public class MainActivity extends AppCompatActivity {
         lv = findViewById(R.id.listView);
         lv.setAdapter(ap);
 
-        /*
-        Button addbuttonmain = (Button) findViewById(R.id.addbuttonmain);
-        addbuttonmain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               addbuttonmainclicked(view);
-            }
-        });
-
-         */
-
     }
 
 
@@ -63,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("count.txt")));
         int currantPositon = Integer.parseInt(br.readLine());
+        br.close();
         for (int i = 1; i < currantPositon ; i++) {
             ObjectInputStream ois = new ObjectInputStream(openFileInput("" + i));
 
