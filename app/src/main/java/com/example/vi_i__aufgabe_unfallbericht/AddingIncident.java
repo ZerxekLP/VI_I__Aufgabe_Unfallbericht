@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -24,6 +25,30 @@ public class AddingIncident extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adding_incident);
+
+        //hinzufügen Button
+        Button addbutton = (Button) findViewById(R.id.addbutton);
+        addbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addbuttonclicked(view);
+            }
+        });
+
+        Button finishedbutton = (Button) findViewById(R.id.finishedbutton);
+        finishedbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    onFinishedClick(view);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
+
+
     }
 
     public void onFinishedClick(View view) throws IOException {
@@ -50,5 +75,9 @@ public class AddingIncident extends AppCompatActivity {
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void addbuttonclicked(final View source){
+
     }
 }
