@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         lv = findViewById(R.id.listView);
         lv.setAdapter(ap);
 
+        /*
         Button addbuttonmain = (Button) findViewById(R.id.addbuttonmain);
         addbuttonmain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,9 +40,8 @@ public class MainActivity extends AppCompatActivity {
                addbuttonmainclicked(view);
             }
         });
-//demo
 
-
+         */
 
     }
 
@@ -96,9 +96,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddingIncident.class);
         startActivity(intent);
     }
-
-    public void  addbuttonmainclicked(final View source){
-
-    }
-
 }
