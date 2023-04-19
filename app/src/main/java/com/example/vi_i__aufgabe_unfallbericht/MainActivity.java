@@ -30,10 +30,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ap = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
         lv = findViewById(R.id.listView);
         lv.setAdapter(ap);
         ll = new LinkedList<>();
+
+        Intent returnedItem = getIntent();
+        Bundle bundle = returnedItem.getExtras();
+        if(bundle != null){
+            Incident returendIncident = (Incident) bundle.getSerializable("returendItem");
+
+            for (int i = 0; i < ll.size(); i++) {
+                if(ll.get(i).id == returendIncident.id){
+                    //ll.get(i).
+                }
+            }
+        }
+
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
