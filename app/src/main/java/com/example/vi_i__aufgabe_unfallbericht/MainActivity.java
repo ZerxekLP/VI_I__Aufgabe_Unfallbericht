@@ -53,10 +53,11 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-        ap = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+        ll = new LinkedList<>();
+        ap = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ll);
         lv = findViewById(R.id.listView);
         lv.setAdapter(ap);
-        ll = new LinkedList<>();
+
 
         Intent returnedItem = getIntent();
         Bundle bundle = returnedItem.getExtras();
@@ -106,18 +107,19 @@ public class MainActivity extends AppCompatActivity {
         BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("count.txt")));
         int currantPositon = Integer.parseInt(br.readLine());
         br.close();
-        for (int i = 1; i < currantPositon ; i++) {
+        ll.clear();
+        for (int i = 0; i < currantPositon ; i++) {
             ObjectInputStream ois = new ObjectInputStream(openFileInput("" + i));
 
             Object a = ois.readObject();
             if( a != null){
-                ap.add((Incident) a);
-                //ll.add(a)
+                ll.add((Incident) a);
             }
 
         }
         ap.notifyDataSetChanged();
 
+        Log.d("Tag", ll.toString());
 
         /*
         String[] files = fileList();
