@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     public void onButtonClick(View view) {
         Intent intent = new Intent(this, AddingIncident.class);
         startActivity(intent);
