@@ -13,6 +13,7 @@ import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -50,8 +51,7 @@ public class AddingIncident extends AppCompatActivity {
     }
 
     public void onFinishedClick(View view) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("count.txt")));
-        int currantPositon = Integer.parseInt(br.readLine());
+
 
         TextView dayOfIncident = findViewById(R.id.dayOfInsident);
         TextView time = findViewById(R.id.time);
@@ -64,7 +64,15 @@ public class AddingIncident extends AppCompatActivity {
 
         //System.out.println(injuredRB.getText());
 
+
+
+
+
         if(selectedIncident == null){
+            BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("count.txt")));
+            int currantPositon = Integer.parseInt(br.readLine());
+            br.close();
+
             Incident currantIncident = new Incident(currantPositon, String.valueOf(dayOfIncident.getText()), String.valueOf(time.getText()),
                     new Place(String.valueOf(place.getText()), Integer.parseInt(String.valueOf(postalCode.getText())),
                             String.valueOf(street.getText()), String.valueOf(nr.getText())), injured.isChecked(), otherDamage.isChecked());
@@ -80,21 +88,26 @@ public class AddingIncident extends AppCompatActivity {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(openFileOutput("count.txt", MODE_PRIVATE)));
             bw.write(currantPositon + "");
             bw.close();
+
         }else{
-            selectedIncident.dayOfIncident = String.valueOf(dayOfIncident.getText());
-            selectedIncident.time = String.valueOf(time.getText());
-            selectedIncident.place.place = String.valueOf(place.getText());
-            selectedIncident.place.postelCode = Integer.parseInt(String.valueOf(postalCode.getText()));
-            selectedIncident.place.street = String.valueOf(street.getText());
-            selectedIncident.place.nr = String.valueOf(nr.getText());
-            selectedIncident.injured = injured.isChecked();
-            selectedIncident.otherDamage = otherDamage.isChecked();
+            Incident currantIncident = new Incident(selectedIncident.id, String.valueOf(dayOfIncident.getText()), String.valueOf(time.getText()),
+                    new Place(String.valueOf(place.getText()), Integer.parseInt(String.valueOf(postalCode.getText())),
+                            String.valueOf(street.getText()), String.valueOf(nr.getText())), injured.isChecked(), otherDamage.isChecked());
+
+            File dir = getFilesDir();
+            File file = new File(dir, "" + selectedIncident.id);
+            boolean deleted = file.delete();
+            System.out.println(deleted);
+
+            ObjectOutputStream oos = new ObjectOutputStream(openFileOutput(selectedIncident.id + "", MODE_PRIVATE));
+            oos.writeObject(currantIncident);
+            oos.close();
         }
 
 
-        selectedIncident = null;
+
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("returnedItem", selectedIncident);
+        selectedIncident = null;
         startActivity(intent);
     }
 

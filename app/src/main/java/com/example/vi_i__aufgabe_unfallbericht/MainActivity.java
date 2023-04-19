@@ -59,18 +59,6 @@ public class MainActivity extends AppCompatActivity {
         lv.setAdapter(ap);
 
 
-        Intent returnedItem = getIntent();
-        Bundle bundle = returnedItem.getExtras();
-        if(bundle != null){
-            Incident returendIncident = (Incident) bundle.getSerializable("returendItem");
-
-            for (int i = 0; i < ll.size(); i++) {
-                if(ll.get(i).id == returendIncident.id){
-                    //ll.get(i).
-                }
-            }
-        }
-
 
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -102,11 +90,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void intoListView() throws IOException, ClassNotFoundException {
-
-
         BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput("count.txt")));
         int currantPositon = Integer.parseInt(br.readLine());
         br.close();
+
         ll.clear();
         for (int i = 0; i < currantPositon ; i++) {
             ObjectInputStream ois = new ObjectInputStream(openFileInput("" + i));
@@ -115,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
             if( a != null){
                 ll.add((Incident) a);
             }
-
         }
+
         ap.notifyDataSetChanged();
 
         Log.d("Tag", ll.toString());
