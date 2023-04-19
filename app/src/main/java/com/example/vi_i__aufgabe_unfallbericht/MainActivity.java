@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayAdapter<Incident> ap;
     ListView lv;
+    LinkedList<Incident> ll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         ap = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
         lv = findViewById(R.id.listView);
         lv.setAdapter(ap);
+        ll = new LinkedList<>();
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             Object a = ois.readObject();
             if( a != null){
                 ap.add((Incident) a);
+                //ll.add(a)
             }
 
         }
@@ -95,8 +98,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+    /*
+
     public void onButtonClick(View view) {
         Intent intent = new Intent(this, AddingIncident.class);
         startActivity(intent);
     }
+
+     */
 }
