@@ -54,15 +54,15 @@ public class AddingIncident extends AppCompatActivity {
         TextView postalCode = findViewById(R.id.postalCcode);
         TextView street = findViewById(R.id.street);
         TextView nr = findViewById(R.id.nr);
-        RadioButton injuredRB = findViewById(R.id.injured);
-        RadioButton otherDamageRB = findViewById(R.id.otherDamage);
+        RadioButton injured = findViewById(R.id.injured);
+        RadioButton otherDamage = findViewById(R.id.otherDamage);
 
-        System.out.println(injuredRB.getText());
+        //System.out.println(injuredRB.getText());
 
 
         Incident currantIncident = new Incident(currantPositon, String.valueOf(dayOfIncident.getText()), String.valueOf(time.getText()),
                 new Place(String.valueOf(place.getText()), Integer.parseInt(String.valueOf(postalCode.getText())),
-                        String.valueOf(street.getText()), String.valueOf(nr.getText())));
+                        String.valueOf(street.getText()), String.valueOf(nr.getText())), injured.isChecked(), otherDamage.isChecked());
 
 
 

@@ -12,12 +12,13 @@ public class Incident implements Serializable {
     boolean injured;
     boolean otherDamage;
 
-    public Incident(int id, String dayOfIncident, String time, Place place) {
+    public Incident(int id, String dayOfIncident, String time, Place place, boolean injured, boolean otherDamage) {
         this.id = id;
         this.dayOfIncident = dayOfIncident;
         this.time = time;
         this.place = place;
-
+        this.injured = injured;
+        this.otherDamage = otherDamage;
     }
 
     @Override
