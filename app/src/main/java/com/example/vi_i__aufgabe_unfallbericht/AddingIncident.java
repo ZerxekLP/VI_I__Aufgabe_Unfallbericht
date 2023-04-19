@@ -120,6 +120,7 @@ public class AddingIncident extends AppCompatActivity {
     }
 
     public void addbuttonclicked(final View source){
-
+        Intent intent = new Intent(this, witness.class);
+        startActivity(intent);
     }
 }
