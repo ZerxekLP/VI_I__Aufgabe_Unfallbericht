@@ -35,6 +35,7 @@ public class AddingIncident extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 addbuttonclicked(view);
+
             }
         });
 
